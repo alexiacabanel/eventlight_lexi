@@ -13,6 +13,8 @@ gem 'dotenv-rails'
 
 gem 'devise'
 
+gem 'stripe'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

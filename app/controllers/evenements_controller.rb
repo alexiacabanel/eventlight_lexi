@@ -63,8 +63,7 @@ class EvenementsController < ApplicationController
       @evenement = Evenement.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def evenement_params
-      params.fetch(:evenement, {})
+      params.require(:evenement).permit(:title, :start_date, :duration, :description, :location, :price, :admin_id, :participants_id)
     end
 end

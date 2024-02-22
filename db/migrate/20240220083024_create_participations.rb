@@ -5,7 +5,6 @@ class CreateParticipations < ActiveRecord::Migration[7.1]
 
       t.belongs_to :user 
       t.belongs_to :evenement
-      t.references :admin, index: true
       t.references :participants, index: true
       
       t.timestamps

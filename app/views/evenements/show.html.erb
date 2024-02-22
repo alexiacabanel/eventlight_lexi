@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @evenement %>
-
+<%= button_to "Passer commande", checkout_create_path(total: @evenement.price, event_id: @event_id), class: "btn btn-primary", data: {turbo: false} %>
 <div>
   <%= link_to "Edit this evenement", edit_evenement_path(@evenement) %> |
   <%= link_to "Back to evenements", evenements_path %>

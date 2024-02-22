@@ -1,0 +1,12 @@
+/*
+*= require_tree .
+*= require_self
+*/
+
+
+
+.bgnavbar {
+    background-color: #000000;
+    background-image: linear-gradient(90deg, #000000 0%, #292929 50%, #000000 100%);
+    
+}

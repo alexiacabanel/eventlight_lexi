@@ -1,2 +1,55 @@
-<div id="<%= dom_id user %>">
+<div>
+<p>
+		<h2 class="card-title"><%= @user.first_name %>  <%= @user.last_name %></h2>
+  </p>
+
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Email :</strong>
+        <%= @user.email %>
+      </p>
+
+      <p class="card-text">
+        <strong>Description</strong>
+        <%= @user.description %>
+      </p>
+      </p>
+    </div>
+    <% Evenement.where(admin_id: @user.id).each do |evenement| %>
+      <div id="<%= dom_id evenement %>">
+<p>
+		<h2 class="card-title"><%= evenement.title %></h2>
+  </p>
+
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Start date:</strong>
+        <%= evenement.start_date %>
+      </p>
+
+      <p class="card-text">
+        <strong>Duration:</strong>
+        <%= evenement.duration %>
+      </p>
+
+      <p class="card-text">
+        <strong>Description:</strong>
+        <%= evenement.description %>
+      </p>
+
+      <p class="card-text">
+        <strong>Location:</strong>
+        <%= evenement.location %>
+      </p>
+
+      <% admin_id = current_user %>
+
+      <p class="card-text">
+        <strong>Price:</strong>
+        <%= evenement.price %>
+      </p>
+    </div>
+
+</div>
+    <% end %>
 </div>
