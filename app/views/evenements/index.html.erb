@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Evenements</h1>
-
-<div id="evenements">
+<%= link_to "New evenement", new_evenement_path %>
+<section class="py-5">
+<div class="container px-5 my-5">
+<div class="row gx-5", id="evenements">
   <% @evenements.each do |evenement| %>
+    <div class="col-lg-4 mb-5">
+    <div class="card h-100 shadow border-0">
+    <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+    <div class="card-body p-4">
     <%= render evenement %>
-    <p>
-      <%= link_to "Show this evenement", evenement %>
-    </p>
+    </div>
+    <%= link_to "Show this evenement", evenement %>
+    </div>
+    </div>
   <% end %>
 </div>
+</div>
 
-<%= link_to "New evenement", new_evenement_path %>
+

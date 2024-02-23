@@ -1,6 +1,6 @@
 <div id="<%= dom_id evenement %>">
 <p>
-		<h2 class="card-title"><%= evenement.title %></h2>
+		<h3 class="text-decoration-none link-dark stretched-link" href="eve"><%= evenement.title %></h3>
   </p>
 
     <div class="card-body">
@@ -30,6 +30,7 @@
         <strong>Price:</strong>
         <%= evenement.price %>
       </p>
+      <%= link_to "Show this evenement", evenement %>
     </div>
 
 </div>
