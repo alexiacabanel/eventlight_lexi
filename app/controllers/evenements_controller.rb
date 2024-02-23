@@ -1,5 +1,6 @@
 class EvenementsController < ApplicationController
-  before_action :set_evenement, only: %i[show edit update destroy]
+  before_action :set_evenement, only: [:show, :edit, :update, :destroy]
+  before_action :evenement, only: [:show, :edit, :update, :destroy]
 
   # GET /evenements or /evenements.json
   def index

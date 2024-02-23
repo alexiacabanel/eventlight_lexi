@@ -39,3 +39,30 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<main class="d-flex justify-content-center align-items-center mt-5">
+
+<form class="form">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<p class="form-title">Sign up</p>
+ <div class="input-container">
+ <%= f.text_field :first_name, placeholder: "First name", autofocus: true%>
+   <span>
+   </span>
+</div>
+<div class="input-container">
+<%= f.text_field :last_name, placeholder: "Last name" %>
+<span>
+</span>
+<div class="input-container">
+<%= ff.email_field :email, placeholder: "Email", autocomplete: "email", autofocus: true%>
+  <span>
+  </span>
+</div>
+ </div>
+  <button type="submit" class="submit actions">
+ Sign in
+</button>
+
+<% end %>
+</form>
+</main>
