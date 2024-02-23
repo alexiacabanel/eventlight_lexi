@@ -1,5 +1,5 @@
 class EvenementsController < ApplicationController
-  before_action :set_evenement, only: %i[ show edit update destroy ]
+  before_action :set_evenement, only: %i[show edit update destroy]
 
   # GET /evenements or /evenements.json
   def index
@@ -8,6 +8,7 @@ class EvenementsController < ApplicationController
 
   # GET /evenements/1 or /evenements/1.json
   def show
+    @evenement = Evenement.find(params[:id].to_i)
   end
 
   # GET /evenements/new
@@ -16,8 +17,7 @@ class EvenementsController < ApplicationController
   end
 
   # GET /evenements/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /evenements or /evenements.json
   def create
@@ -25,7 +25,7 @@ class EvenementsController < ApplicationController
 
     respond_to do |format|
       if @evenement.save
-        format.html { redirect_to evenement_url(@evenement), notice: "Evenement was successfully created." }
+        format.html { redirect_to evenement_url(@evenement), notice: 'Evenement was successfully created.' }
         format.json { render :show, status: :created, location: @evenement }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class EvenementsController < ApplicationController
   def update
     respond_to do |format|
       if @evenement.update(evenement_params)
-        format.html { redirect_to evenement_url(@evenement), notice: "Evenement was successfully updated." }
+        format.html { redirect_to evenement_url(@evenement), notice: 'Evenement was successfully updated.' }
         format.json { render :show, status: :ok, location: @evenement }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,18 +52,20 @@ class EvenementsController < ApplicationController
     @evenement.destroy!
 
     respond_to do |format|
-      format.html { redirect_to evenements_url, notice: "Evenement was successfully destroyed." }
+      format.html { redirect_to evenements_url, notice: 'Evenement was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_evenement
-      @evenement = Evenement.find(params[:id])
-    end
 
-    def evenement_params
-      params.require(:evenement).permit(:title, :start_date, :duration, :description, :location, :price, :admin_id, :participants_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_evenement
+    @evenement = Evenement.find(params[:id])
+  end
+
+  def evenement_params
+    params.require(:evenement).permit(:title, :start_date, :duration, :description, :location, :price, :admin_id,
+                                      :participants_id)
+  end
 end
