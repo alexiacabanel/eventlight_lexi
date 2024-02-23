@@ -39,7 +39,7 @@
 
       <% if user_signed_in? %>
       <div>
-      <%= link_to "My profile", user_path(current_user), class: "btn btn-primary" %>
+      <%= link_to "My profile", user_path(current_user.id), class: "btn btn-primary" %>
     </div>
     <div class="col-lg-3 d-flex justify-content-end ">
     <ul>
